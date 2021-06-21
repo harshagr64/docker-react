@@ -10,7 +10,7 @@ script:
   - docker run -e CI=true harshagr64/docker-react npm run test
 
 deploy:
-  provider: elasticsearch
+  provider: elasticbeanstalk
   region: "ap-south-1"
   app: "docker-react"
   env: "Dockerreact-env"
