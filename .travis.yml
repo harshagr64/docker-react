@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true harshagr64/docker-react npm run test
+
+deploy:
+  provider: elasticsearch
+  region: "ap-south-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-988830324420"
+  bucket_path: "docker-react"
+  on: 
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  seceret_access_key:
+    secure "$AWS_SECERET_KEY"
