@@ -1,9 +1,9 @@
 sudo: required
+language: generic
 services:
   - docker
 
 before_install:
-  
   - docker build -t harshagr64/docker-react -f Dockerfile.dev .
 
 script:
